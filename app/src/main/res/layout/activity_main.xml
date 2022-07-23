@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/p_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:theme="@style/progressStyle"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/all_btn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="All Files"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:background="@color/colorPrimaryDark"/>
+        <Button
+            android:id="@+id/recent_btn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Recent Files"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:background="@color/white"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_below="@+id/linear"
+        android:id="@+id/relative"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PDF Files"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryDark" />
+        <ImageButton
+            android:id="@+id/grid_view_status"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/grid_off"
+            />
+        <ImageButton
+            android:layout_toLeftOf="@id/grid_view_status"
+            android:id="@+id/view_status"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/grid_on"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_below="@id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:visibility="gone"/>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_below="@id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <GridView
+        android:id="@+id/grid_view_recent"
+        android:layout_below="@id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2"
+        android:visibility="gone"/>
+    <ListView
+        android:id="@+id/list_view_recent"
+        android:layout_below="@id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        app:menu_fab_size="normal"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_colorPressed="@color/colorPrimary"
+        app:menu_colorNormal="@color/colorPrimaryDark"
+        app:menu_icon="@drawable/ic_sort_black_24dp">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_label="A to Z"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_colorNormal="@color/colorPrimary" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_label="Z to A"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_colorNormal="@color/colorPrimary" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_label="1 to N"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_colorNormal="@color/colorPrimary" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_item4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_label="N to 1"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_colorNormal="@color/colorPrimary" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>
